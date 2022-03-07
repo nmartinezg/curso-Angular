@@ -1,0 +1,30 @@
+<p>listado !</p>
+
+<div>
+    <!--<h3 *ngIf="hereoBorrado!==''">Heroe borrado -->
+        <!--noBorrar: referencia local, no afecta el ts-->
+    <h3 *ngIf="hereoBorrado;else noBorrar">Heroe borrado
+        <small>{{hereoBorrado}}</small>
+    </h3>
+</div>
+
+
+
+<ng-template #noBorrar>
+
+    <!--<h3 *ngIf="hereoBorrado!==''">Heroe borrado -->
+    <h3 *ngIf="noBorrar" > No hay borrdo nada
+    </h3>
+</ng-template>
+
+
+<button (click)="borrarElemento()">
+    Borrar
+</button>
+
+
+<ul>
+    <li *ngFor="let superHeroe of heroes; let i=index">
+        {{i + 1}} - {{superHeroe}}
+    </li>
+</ul>
